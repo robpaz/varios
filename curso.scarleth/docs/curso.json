@@ -1,0 +1,553 @@
+{
+    "schemaVersion": "1.0",
+    "contentVersion": "2025-12-12",
+    "language": "es",
+    "course": {
+        "id": "mdt-reuma-2025-avanzado",
+        "title": "Manejo multidisciplinario del paciente reumático (2025+)",
+        "level": "avanzado",
+        "format": {
+            "totalHoursRange": {
+                "min": 40,
+                "max": 60
+            },
+            "structure": "12 módulos + ateneo MDT semanal + proyecto final",
+            "recommendedCadence": "1–2 módulos por semana + ateneo MDT semanal",
+            "teachingModalities": [
+                "clases magistrales cortas (micro-lectures)",
+                "talleres de decisión clínica (case-based)",
+                "simulación/OSCE",
+                "ateneo MDT tipo 'board' (casos complejos)",
+                "aprendizaje invertido con guías y algoritmos"
+            ],
+            "evaluationModalities": [
+                "pre/post test",
+                "OSCE",
+                "presentación de caso en ateneo MDT",
+                "proyecto de implementación (ruta clínica local)"
+            ]
+        },
+        "targetAudience": [
+            "reumatología",
+            "medicina interna",
+            "medicina familiar",
+            "fisiatría/rehabilitación",
+            "anestesiología y medicina del dolor",
+            "ortopedia/traumatología",
+            "dermatología",
+            "gastroenterología",
+            "neumología",
+            "nefrología",
+            "cardiología",
+            "enfermería reumatológica",
+            "farmacia clínica"
+        ],
+        "coreFocus": [
+            "inflamación",
+            "dolor (nociceptivo/neuropático/nociplástico)",
+            "comorbilidades y prevención",
+            "coordinación de cuidado multidisciplinario",
+            "treat-to-target (T2T) + decisiones compartidas",
+            "medicina medible: métricas clínicas + PROMs"
+        ],
+        "learningObjectives": [
+            "Fenotipar el cuadro reumático (inflamatorio/mecánico/mixto; articular/periarticular/sistémico) y estratificar riesgo (progresión, daño estructural, comorbilidades, seguridad terapéutica).",
+            "Aplicar algoritmos farmacológicos avanzados (csDMARD/bDMARD/tsDMARD) con escalamiento, cambio de mecanismo y de-escalamiento racional; optimizar el uso/retirada de glucocorticoides.",
+            "Integrar manejo del dolor multimodal basado en evidencia (educación, ejercicio, psicología, sueño, peso, farmacología y trabajo interdisciplinario), diferenciando fenotipos de dolor.",
+            "Diseñar e implementar planes de cuidado MDT (rehabilitación, enfermería, farmacia clínica, salud mental y subespecialidades de órgano) con seguimiento por métricas y PROMs.",
+            "Operativizar metodología 2025+ (clínica híbrida, telemedicina, monitoreo remoto, rutas clínicas, auditoría de calidad y preparación para tecnologías emergentes)."
+        ],
+        "prerequisites": [
+            "Conocimiento sólido de reumatología clínica (RA, PsA, axSpA, conectivopatías, vasculitis).",
+            "Lectura e interpretación de laboratorio e imagen básica (US articular, RM básica, RX).",
+            "Competencias básicas en prescripción segura y farmacovigilancia."
+        ],
+        "recommendedCoreReferences": [
+            "EULAR/ACR: recomendaciones vigentes para AR y estrategias Treat-to-Target.",
+            "Guías de vacunación en pacientes con enfermedades reumáticas bajo inmunosupresión.",
+            "Recomendaciones/consensos sobre 'difficult-to-treat' en artritis inflamatoria.",
+            "Consensos MDT para compromiso sistémico (p. ej., ILD asociada a conectivopatías).",
+            "Tendencias 2025+: salud digital, PROMS, monitoreo remoto, cuidado basado en valor."
+        ]
+    },
+    "modules": [
+        {
+            "id": "M01",
+            "title": "Inmunopatogénesis aplicada y endotipos clínicos",
+            "estimatedHours": 4,
+            "outcomes": [
+                "Traducir mecanismos (TNF/IL-6/IL-17/IL-23, coestimulación, B-cells, JAK-STAT) a decisiones terapéuticas.",
+                "Explicar el vínculo biológico entre inflamación, daño estructural y persistencia de dolor."
+            ],
+            "topics": [
+                "Sinovitis y ejes citoquínicos (TNF, IL-6, IL-17/23).",
+                "Coestimulación y células B: implicaciones terapéuticas.",
+                "Señalización JAK-STAT: racionalidad y consideraciones de seguridad.",
+                "Dolor: nociceptivo vs neuropático vs nociplástico; sensibilización central.",
+                "Ventana de oportunidad y prevención de daño estructural."
+            ],
+            "workshop": {
+                "title": "Mapa mecanismo → blanco terapéutico",
+                "tasks": [
+                    "Clasificar 6 viñetas clínicas por endotipo probable.",
+                    "Proponer 1–2 blancos terapéuticos razonables por viñeta y justificar."
+                ]
+            }
+        },
+        {
+            "id": "M02",
+            "title": "Diagnóstico temprano, clasificación y banderas rojas",
+            "estimatedHours": 4,
+            "outcomes": [
+                "Diferenciar artritis inflamatoria de diagnósticos alternativos críticos.",
+                "Aplicar un enfoque sindrómico con priorización de urgencias."
+            ],
+            "topics": [
+                "Artritis inflamatoria: RA, PsA, axSpA, conectivopatías, vasculitis, cristalopatías.",
+                "Banderas rojas: infección (artritis séptica), neoplasia, compromiso neurológico, ojo rojo doloroso (uveítis), dolor óseo nocturno, síndrome constitucional.",
+                "Enfoque por síndrome: poliartritis seropositiva, oligoartritis + psoriasis, dolor lumbar inflamatorio, entesitis/dactilitis."
+            ],
+            "workshop": {
+                "title": "Triage reumatológico",
+                "tasks": [
+                    "Ordenar pruebas iniciales y urgencias por probabilidad/impacto.",
+                    "Definir umbrales de derivación (urgente vs preferente)."
+                ]
+            }
+        },
+        {
+            "id": "M03",
+            "title": "Medición de actividad, daño y PROMs (medicina medible)",
+            "estimatedHours": 4,
+            "outcomes": [
+                "Seleccionar y calcular índices de actividad y daño según patología.",
+                "Integrar PROMs para decisiones y seguimiento."
+            ],
+            "topics": [
+                "RA: DAS28-CRP/ESR, CDAI, SDAI; remisión/actividad baja; US power Doppler y RM.",
+                "PsA: DAPSA/PASDAS; dominios (piel/uña/entesis/dactilitis).",
+                "axSpA: ASDAS/BASDAI; correlato clínico-imagen.",
+                "PROMs: HAQ-DI, FACIT-Fatigue, PROMIS Pain Interference, sueño (ISI), salud mental (PHQ-9/GAD-7).",
+                "Discordancia inflamación-dolor: implicaciones operativas."
+            ],
+            "practical": {
+                "title": "Mini-clínica de 15 minutos",
+                "steps": [
+                    "medir",
+                    "decidir",
+                    "documentar",
+                    "programar reevaluación"
+                ]
+            }
+        },
+        {
+            "id": "M04",
+            "title": "Algoritmos farmacológicos en RA (avanzado y realista)",
+            "estimatedHours": 6,
+            "outcomes": [
+                "Implementar T2T con tiempos y umbrales claros.",
+                "Escoger secuenciación terapéutica considerando comorbilidades y riesgo."
+            ],
+            "topics": [
+                "Estrategia T2T: objetivo, tiempos (8–12 semanas), escalamiento, cambio de mecanismo, de-escalamiento.",
+                "csDMARD: metotrexato (base), leflunomida, sulfasalazina, hidroxicloroquina; combinaciones y optimización.",
+                "bDMARD: anti-TNF, anti-IL-6R, abatacept, rituximab (selección por fenotipo/seguridad).",
+                "tsDMARD (JAKi): criterios de selección por riesgo (CV/TEV, edad, tabaquismo, malignidad, infecciones).",
+                "Glucocorticoides: uso puente, minimización, retirada planificada y documentación de riesgo-beneficio.",
+                "Farmacovigilancia y criterios de falla (primaria/secundaria, inmunogenicidad, adherencia, diagnósticos alternativos)."
+            ],
+            "workshop": {
+                "title": "Selección de terapia en perfiles complejos",
+                "profiles": [
+                    "alto riesgo cardiovascular",
+                    "deseo gestacional",
+                    "antecedente infeccioso relevante",
+                    "fragilidad/osteoporosis",
+                    "polifarmacia",
+                    "discordancia dolor-inflamación"
+                ],
+                "deliverable": "Algoritmo de decisión por perfil + plan de monitoreo"
+            },
+            "sampleTreatmentRegimens": [
+                {
+                    "name": "Inicio de csDMARD con enfoque T2T",
+                    "example": "Optimización rápida de metotrexato con folato + monitoreo de laboratorio + reevaluación 8–12 semanas."
+                },
+                {
+                    "name": "Puente con glucocorticoide (si se decide usar)",
+                    "example": "Uso corto y plan explícito de retirada, minimizando dosis y duración según riesgo individual."
+                },
+                {
+                    "name": "Escalamiento por falla a objetivo",
+                    "example": "Cambio a bDMARD o tsDMARD considerando comorbilidades (CV, infecciones, edad) y preferencia del paciente."
+                }
+            ]
+        },
+        {
+            "id": "M05",
+            "title": "PsA y axSpA: integración reuma-derma-gastro-oftalmo",
+            "estimatedHours": 5,
+            "outcomes": [
+                "Elegir tratamiento por dominios (articular, piel, axial, entesitis, EMM).",
+                "Coordinar derivaciones y co-manejo MDT."
+            ],
+            "topics": [
+                "PsA: dominios clínicos; medición (DAPSA/PASDAS); piel/uñas (PASI/DLQI).",
+                "axSpA: estrategia no farmacológica + AINEs + biológicos; objetivos funcionales y de imagen.",
+                "Manifestaciones extra-musculoesqueléticas: uveítis, EII (IBD), psoriasis severa.",
+                "Coordinación práctica: reuma-derma-gastro-oftalmo-rehab."
+            ],
+            "workshop": {
+                "title": "Plan por dominios",
+                "tasks": [
+                    "Armar 3 planes: predominio piel, predominio axial, predominio entesitis/actividad articular.",
+                    "Definir métricas y tiempos de control."
+                ]
+            }
+        },
+        {
+            "id": "M06",
+            "title": "Dolor en reumatología: de síntoma a diagnóstico transversal",
+            "estimatedHours": 6,
+            "outcomes": [
+                "Fenotipar dolor y detectar nociplasticidad/sensibilización central.",
+                "Construir planes multimodales realistas y medibles."
+            ],
+            "topics": [
+                "Dolor inflamatorio vs mecánico vs mixto.",
+                "Dolor persistente en remisión: discordancia actividad-dolor y causas frecuentes.",
+                "Estrategias no farmacológicas: educación, ejercicio, ortesis, pérdida de peso, sueño, intervenciones psicosociales.",
+                "Farmacología del dolor: AINEs/COX-2 (riesgo GI/CV/renal), infiltraciones (idealmente guiadas por US), adyuvantes para componentes neuropáticos/nociplásticos con criterios y deprescripción.",
+                "Derivación a dolor/intervencionismo: criterios y expectativas."
+            ],
+            "simulation": {
+                "title": "Entrevista breve centrada en dolor",
+                "checklist": [
+                    "función y metas",
+                    "sueño",
+                    "ánimo",
+                    "catastrofización/miedo al movimiento",
+                    "actividad física",
+                    "red flags",
+                    "plan y seguimiento por PROMs"
+                ]
+            }
+        },
+        {
+            "id": "M07",
+            "title": "Rehabilitación y fisiatría basada en objetivos",
+            "estimatedHours": 4,
+            "outcomes": [
+                "Prescribir ejercicio y terapia ocupacional con dosificación por brote/remisión.",
+                "Medir progreso funcional y retorno al trabajo."
+            ],
+            "topics": [
+                "Prescripción de ejercicio: aeróbico, fuerza, estabilidad; progresión y adaptación.",
+                "Terapia ocupacional: férulas, economía articular, ergonomía, adaptaciones.",
+                "Reentrenamiento funcional, prevención de caídas, retorno laboral."
+            ],
+            "deliverable": "Plan de rehab 12 semanas + indicadores (HAQ, dolor, capacidad aeróbica, fuerza funcional)"
+        },
+        {
+            "id": "M08",
+            "title": "Enfermería reumatológica y educación terapéutica (núcleo MDT)",
+            "estimatedHours": 4,
+            "outcomes": [
+                "Implementar educación terapéutica estructurada y seguimiento remoto.",
+                "Optimizar adherencia, acceso, seguridad y experiencia del paciente."
+            ],
+            "topics": [
+                "Rol de enfermería: educación, soporte psicosocial, seguimiento, eficiencia del cuidado, roles extendidos.",
+                "Programas de automanejo: metas, solución de problemas, CBT breve, recursos comunitarios.",
+                "Comunicación clínica: teach-back, alfabetización en salud, decisiones compartidas."
+            ],
+            "workshop": {
+                "title": "Guion de inicio de MTX/biológico + checklist de seguridad",
+                "outputs": [
+                    "guion breve (5–7 min) para consulta",
+                    "checklist de adherencia",
+                    "plan de monitoreo de EA y laboratorio"
+                ]
+            }
+        },
+        {
+            "id": "M09",
+            "title": "Seguridad, infecciones, vacunas y prevención (medicina interna aplicada)",
+            "estimatedHours": 6,
+            "outcomes": [
+                "Diseñar paquetes de seguridad antes y durante inmunosupresión.",
+                "Integrar prevención CV/ósea/salud mental en el plan reumatológico."
+            ],
+            "topics": [
+                "Screening de infecciones antes de inmunosupresión y reevaluación según riesgo.",
+                "Vacunación en RMD bajo inmunosupresión: indicaciones y consideraciones operativas.",
+                "Riesgo cardiovascular aumentado en artritis inflamatoria: evaluación y manejo coordinado.",
+                "Osteoporosis inducida por GC, fragilidad, sarcopenia.",
+                "Sueño, salud mental, cáncer y tamizajes: integración pragmática."
+            ],
+            "templates": [
+                "Checklist pre-inmunosupresión",
+                "Plan anual de prevención y comorbilidades",
+                "Algoritmo de fiebre/infección en paciente inmunosuprimido (operativo)"
+            ]
+        },
+        {
+            "id": "M10",
+            "title": "Difficult-to-treat y refractariedad: marco clínico y operativo",
+            "estimatedHours": 5,
+            "outcomes": [
+                "Distinguir refractariedad biológica de falla por causas corregibles.",
+                "Construir estrategias escalables para casos complejos."
+            ],
+            "topics": [
+                "Definición operativa de 'difficult-to-treat'.",
+                "Revisión estructurada: adherencia, comorbilidades, dolor nociplástico, diagnósticos alternativos, sesgos de medición.",
+                "Estrategias de cambio de mecanismo y combinación con abordajes no farmacológicos.",
+                "Segunda opinión estructurada y comités de casos complejos."
+            ],
+            "toolkit": [
+                "Plantilla de auditoría de falla terapéutica",
+                "Checklist de causas de discordancia (paciente vs biomarcadores vs imagen)"
+            ]
+        },
+        {
+            "id": "M11",
+            "title": "Compromiso sistémico y subespecialidades de órgano (modelo en red)",
+            "estimatedHours": 6,
+            "outcomes": [
+                "Reconocer y co-manejar compromiso de órgano con rutas MDT.",
+                "Definir criterios de derivación y monitorización longitudinal."
+            ],
+            "topics": [
+                "ILD asociada a RA/CTD: criterios de sospecha, MDT (neumo-reuma-radio), seguimiento.",
+                "Nefritis lúpica y compromiso renal: coordinación con nefrología.",
+                "Vasculitis sistémicas y SAF: estratificación de riesgo y rutas de urgencia.",
+                "Miopatías inflamatorias: evaluación, terapia y rehabilitación."
+            ],
+            "deliverable": "Ruta MDT de órgano (ej.: ILD-CTD) con puntos de control y responsabilidades"
+        },
+        {
+            "id": "M12",
+            "title": "Metodología 2025+ y del futuro: clínica híbrida, digital y basada en valor",
+            "estimatedHours": 6,
+            "outcomes": [
+                "Implementar clínica híbrida y monitoreo remoto con PROMS.",
+                "Construir rutas clínicas auditables y escalables.",
+                "Prepararse para integración de IA/biomarcadores emergentes de forma segura."
+            ],
+            "topics": [
+                "Clínica híbrida: teleconsulta + visitas presenciales estratégicas + monitoreo remoto.",
+                "Monitoreo remoto: PROMs y actividad, alertas, umbrales de escalamiento.",
+                "Medicina de precisión (estado 2025): estratificación por riesgo, biomarcadores en maduración, selección por perfil.",
+                "IA y salud digital: soporte a imagen, predicción de brotes/adherencia, riesgos y gobernanza clínica.",
+                "Cuidado basado en valor: métricas, rutas clínicas, biosimilares y acceso, farmacoeconomía aplicada."
+            ],
+            "capstone": {
+                "title": "Proyecto final: ruta clínica local",
+                "options": [
+                    "Ruta de artritis temprana",
+                    "Ruta de difficult-to-treat",
+                    "Ruta de dolor persistente en remisión"
+                ],
+                "deliverables": [
+                    "diagrama de flujo",
+                    "métricas (clínicas + PROMs)",
+                    "paquete de seguridad y prevención",
+                    "plan de implementación (roles, tiempos, auditoría)"
+                ]
+            }
+        }
+    ],
+    "caseStudy": {
+        "id": "CS01",
+        "title": "Ateneo MDT: AR seropositiva con alto dolor, fatiga y comorbilidades",
+        "patientProfile": {
+            "age": 52,
+            "sex": "femenino",
+            "occupation": "docente",
+            "timeline": "10 meses de evolución",
+            "workingDiagnosis": "Artritis reumatoide seropositiva probable"
+        },
+        "presentation": {
+            "symptoms": [
+                "dolor y tumefacción en MCP/PIP bilaterales",
+                "rigidez matinal 90 minutos",
+                "fatiga severa",
+                "sueño no reparador"
+            ],
+            "activityAndImaging": [
+                "actividad alta (ej.: DAS28-CRP alto)",
+                "US articular con power Doppler en muñecas/MCP"
+            ],
+            "labs": [
+                "FR positivo",
+                "anti-CCP alto"
+            ],
+            "comorbidities": [
+                "hipertensión arterial",
+                "dislipidemia",
+                "tabaquismo",
+                "IMC 32",
+                "ansiedad/depresión leve (PHQ-9 11)",
+                "antecedente de herpes zóster",
+                "riesgo cardiovascular aumentado"
+            ]
+        },
+        "advancedQuestions": [
+            "¿Cuál es el fenotipo de dolor (inflamatorio vs sensibilización central/nociplástico vs mixto)? ¿Qué datos lo respaldan?",
+            "¿Plan inicial y estrategia T2T a 12 semanas (objetivo, métricas, umbrales de cambio)?",
+            "Si falla csDMARD: ¿qué mecanismo elegir considerando riesgo CV y antecedentes infecciosos? Justificar.",
+            "¿Qué paquete de prevención/seguridad es obligatorio antes de escalar tratamiento?"
+        ],
+        "exampleMDTPlan": {
+            "rheumatology": [
+                "Inicio/optimización de csDMARD (ej.: metotrexato con titulación según tolerancia) + folato; reevaluación 8–12 semanas con objetivo explícito (remisión/actividad baja).",
+                "Glucocorticoide puente solo si se decide, con plan explícito de retirada (minimizar dosis/duración).",
+                "Si falla a objetivo: escalamiento a bDMARD o tsDMARD con selección por riesgo (CV/TEV, infecciones, edad, tabaquismo) y preferencia del paciente."
+            ],
+            "rheumatologyNursing": [
+                "Educación estructurada (teach-back): objetivos T2T, adherencia, EA, señales de alarma, vacunas, plan de controles.",
+                "Seguimiento remoto semanal las primeras 4–6 semanas (síntomas, EA, adherencia, barreras)."
+            ],
+            "clinicalPharmacy": [
+                "Revisión de interacciones y comorbilidades.",
+                "Plan de monitoreo (laboratorio y criterios de suspensión/ajuste).",
+                "Deprescripción racional de AINEs si riesgo alto o duplicidad."
+            ],
+            "painAndMentalHealth": [
+                "Intervención breve orientada a sueño/estrés (p. ej., CBT breve) y metas funcionales.",
+                "Plan multimodal de dolor: priorizar educación + ejercicio + sueño + psicología; farmacología racional según fenotipo."
+            ],
+            "rehabilitation": [
+                "Programa 12 semanas: fuerza progresiva + aeróbico + plan mano/muñeca; metas funcionales medibles."
+            ],
+            "primaryCareOrCardiology": [
+                "Control intensivo de riesgo CV (HTA, lípidos, cesación tabáquica, peso) coordinado con control inflamatorio."
+            ],
+            "infectionPreventionAndVaccines": [
+                "Checklist pre-inmunosupresión: tamizaje y actualización de vacunas según riesgo y terapia.",
+                "Plan de manejo de fiebre/infección y educación del paciente."
+            ]
+        },
+        "learnerDeliverables": [
+            "Nota clínica T2T completa (métricas + objetivo + fecha de reevaluación).",
+            "Plan de seguridad (infecciones/vacunas/CV/óseo).",
+            "Plan de dolor (fenotipo + intervenciones + métricas PROMs).",
+            "Hoja de coordinación MDT con responsables y tiempos."
+        ]
+    },
+    "assessment": {
+        "prePostTest": {
+            "description": "Preguntas de decisión clínica por módulos (incluye seguridad y comorbilidades).",
+            "recommendedQuestionCount": {
+                "min": 30,
+                "max": 60
+            }
+        },
+        "osce": {
+            "description": "Consulta simulada 12 minutos + decisión farmacológica + counselling de riesgo + plan de seguimiento medible.",
+            "stations": [
+                "fenotipado de dolor y actividad",
+                "decisión T2T y escalamiento",
+                "educación terapéutica y seguridad",
+                "comorbilidades y prevención"
+            ]
+        },
+        "mdtBoardPresentation": {
+            "description": "Presentación de caso completo con algoritmo terapéutico, plan de prevención, y coordinación MDT.",
+            "rubricDomains": [
+                "razonamiento diagnóstico y diferencial",
+                "selección terapéutica y T2T",
+                "seguridad/vacunación/infecciones",
+                "plan de dolor multimodal",
+                "rehabilitación y funcionalidad",
+                "comunicación y decisiones compartidas",
+                "medición (índices + PROMs) y seguimiento"
+            ]
+        },
+        "implementationProject": {
+            "description": "Diseño de una ruta clínica local auditables (artritis temprana / D2T / dolor persistente en remisión).",
+            "requiredArtifacts": [
+                "flujo de derivación y triage",
+                "métricas (clínicas + PROMs)",
+                "paquete de seguridad",
+                "plan operativo (roles, tiempos, auditoría)"
+            ]
+        }
+    },
+    "methodology2025Plus": {
+        "principles": [
+            "clínica híbrida y escalonada",
+            "monitoreo remoto con umbrales",
+            "medicina medible (índices + PROMs)",
+            "gobernanza de seguridad y farmacovigilancia",
+            "cuidado basado en valor y acceso"
+        ],
+        "digitalComponents": [
+            "captura de PROMs previa a consulta",
+            "alertas por brote, EA o no adherencia",
+            "teletriage y seguimiento por enfermería",
+            "dashboards clínicos (actividad, seguridad, comorbilidades)"
+        ],
+        "qualityAndAudit": [
+            "indicadores de proceso (tiempo a diagnóstico, tiempo a csDMARD, control 12 semanas)",
+            "indicadores de resultado (remisión/actividad baja, HAQ, PROMIS dolor, días laborales perdidos)",
+            "indicadores de seguridad (vacunación al día, screening, eventos adversos serios)"
+        ]
+    },
+    "appendices": {
+        "checklists": [
+            {
+                "id": "CL01",
+                "title": "Checklist pre-inmunosupresión (operativo)",
+                "items": [
+                    "historia infecciosa y exposiciones",
+                    "vacunación: estado y plan",
+                    "tamizaje según riesgo (TB/viral/otros según contexto)",
+                    "laboratorio basal y función orgánica",
+                    "riesgo CV y óseo",
+                    "educación de señales de alarma y plan de contacto"
+                ]
+            },
+            {
+                "id": "CL02",
+                "title": "Checklist de discordancia dolor-inflamación",
+                "items": [
+                    "actividad inflamatoria objetiva (índices, CRP/ESR, US)",
+                    "fenotipo de dolor (nociceptivo/neuropático/nociplástico)",
+                    "sueño",
+                    "salud mental",
+                    "actividad física/desacondicionamiento",
+                    "comorbilidad fibromiálgica",
+                    "expectativas y metas funcionales"
+                ]
+            }
+        ],
+        "glossary": [
+            {
+                "term": "T2T (Treat-to-Target)",
+                "definition": "Estrategia de tratamiento con objetivo explícito (remisión/actividad baja), medición periódica y ajuste terapéutico en tiempos definidos."
+            },
+            {
+                "term": "csDMARD",
+                "definition": "Fármacos modificadores de enfermedad convencionales sintéticos (ej.: metotrexato, leflunomida, sulfasalazina, hidroxicloroquina)."
+            },
+            {
+                "term": "bDMARD",
+                "definition": "Fármacos biológicos modificadores de enfermedad (anti-TNF, anti-IL-6R, abatacept, rituximab, etc.)."
+            },
+            {
+                "term": "tsDMARD",
+                "definition": "Fármacos sintéticos dirigidos (ej.: inhibidores de JAK), con selección cuidadosa por perfiles de riesgo."
+            },
+            {
+                "term": "PROMs",
+                "definition": "Patient-Reported Outcome Measures: medidas reportadas por el paciente (dolor, función, fatiga, sueño, calidad de vida)."
+            },
+            {
+                "term": "Dolor nociplástico",
+                "definition": "Dolor asociado a alteración del procesamiento nociceptivo sin evidencia clara de daño tisular o lesión del sistema somatosensorial; frecuentemente ligado a sensibilización central."
+            }
+        ]
+    }
+}

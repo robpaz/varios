@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas IA - SUMAJ MAKI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: #0f172a;
+        }
+
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e2e8f0;
+            height: 80px;
+        }
+
+        [data-bs-theme="dark"] .navbar {
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+
+        .tools-card {
+            background-color: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+            min-height: 600px;
+            overflow: hidden;
+        }
+
+        [data-bs-theme="dark"] .tools-card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .nav-tabs-custom {
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        [data-bs-theme="dark"] .nav-tabs-custom {
+            border-color: #334155;
+        }
+
+        .nav-link-custom {
+            border: none;
+            border-bottom: 2px solid transparent;
+            color: #64748b;
+            padding: 1rem;
+            font-weight: 500;
+            background: transparent;
+            width: 50%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+
+        [data-bs-theme="dark"] .nav-link-custom {
+            color: #94a3b8;
+        }
+
+        .nav-link-custom:hover {
+            color: #0f172a;
+            background-color: #f8fafc;
+        }
+
+        [data-bs-theme="dark"] .nav-link-custom:hover {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .nav-link-custom.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+            background-color: rgba(14, 165, 233, 0.05);
+        }
+
+        .upload-box {
+            border: 2px dashed #cbd5e1;
+            border-radius: 0.75rem;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        [data-bs-theme="dark"] .upload-box {
+            border-color: #475569;
+        }
+
+        .upload-box:hover {
+            background-color: #f8fafc;
+        }
+
+        [data-bs-theme="dark"] .upload-box:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .result-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 0.75rem;
+        }
+
+        [data-bs-theme="dark"] .result-box {
+            background-color: rgba(30, 41, 59, 0.5);
+            border-color: #334155;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top z-3">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                <img src="images/logo.png" alt="Logo" width="40" height="40" class="rounded-circle">
+                <div class="d-flex flex-column">
+                    <span class="fw-bold lh-1 text-dark dark:text-light" style="font-size: 1.25rem;">SUMAJ MAKI</span>
+                    <span class="text-secondary fw-bold" style="font-size: 0.65rem;">FUNDACIÓN MULTIDISCIPLINARIA</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-flex align-items-center gap-3 ms-auto mt-3 mt-lg-0">
+                    <a href="courses.html"
+                        class="btn btn-link text-decoration-none text-secondary d-flex align-items-center gap-2">
+                        <i class="ph ph-book-open" style="font-size: 1.5rem;"></i>
+                        <span>Tabla de Contenidos</span>
+                    </a>
+                    <a href="ai-tools.html"
+                        class="btn btn-link text-decoration-none text-primary d-flex align-items-center gap-2 bg-primary-subtle rounded-3 p-2">
+                        <i class="ph ph-sparkle" style="font-size: 1.5rem;"></i>
+                        <span>Herramientas IA</span>
+                    </a>
+                    <button class="btn btn-light rounded-circle p-2" id="themeToggle">
+                        <i class="ph ph-moon" id="themeIcon" style="font-size: 1.5rem;"></i>
+                    </button>
+                    <div class="rounded-circle bg-secondary-subtle d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;">
+                        <i class="ph ph-user text-secondary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow-1 px-4 py-5 container-xl">
+        <div class="mb-5">
+            <h1 class="h2 fw-bold mb-2 text-body-emphasis">Herramientas de IA Médica</h1>
+            <p class="text-secondary">Utilice la inteligencia artificial para investigar o analizar imágenes médicas.
+            </p>
+        </div>
+
+        <div class="tools-card d-flex flex-column">
+            <!-- Tabs -->
+            <div class="nav-tabs-custom d-flex">
+                <button class="nav-link-custom active" id="tab-search" onclick="switchTab('search')">
+                    <i class="ph ph-magnifying-glass"></i> Asistente de Investigación
+                </button>
+                <button class="nav-link-custom" id="tab-image" onclick="switchTab('image')">
+                    <i class="ph ph-image"></i> Edición de Imágenes (Nano Banana)
+                </button>
+            </div>
+
+            <div class="p-4 p-md-5 flex-grow-1 position-relative">
+
+                <!-- Search Tool -->
+                <div id="content-search" class="fade-in">
+                    <div class="mx-auto" style="max-width: 768px;">
+                        <form id="searchForm" class="mb-5 position-relative">
+                            <input type="text" id="searchInput" class="form-control form-control-lg pe-5"
+                                placeholder="Ej: ¿Cuáles son los últimos tratamientos biológicos para la artritis reumatoide?">
+                            <button type="submit"
+                                class="btn btn-primary position-absolute top-50 end-0 translate-middle-y me-2 rounded-lg p-2 d-flex align-items-center justify-content-center"
+                                style="width: 40px; height: 40px;">
+                                <i class="ph ph-magnifying-glass text-white"></i>
+                            </button>
+                        </form>
+
+                        <div id="searchResult" class="d-none animate-fadeIn">
+                            <div class="result-box p-4 mb-4">
+                                <h3 class="h5 fw-bold mb-3 d-flex align-items-center gap-2 text-body-emphasis">
+                                    <i class="ph ph-magic-wand text-primary"></i> Resultado Generado
+                                </h3>
+                                <div class="text-secondary lh-lg" id="resultText"></div>
+                            </div>
+
+                            <div id="sourcesContainer" class="mt-4">
+                                <h4 class="small fw-bold text-secondary text-uppercase mb-3">Fuentes (Grounding)</h4>
+                                <div class="row g-3" id="sourcesList">
+                                    <!-- Sources injected here -->
+                                </div>
+                            </div>
+                        </div>
+                        <div id="searchLoader" class="d-none text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <p class="mt-3 text-secondary">Analizando fuentes médicas...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Tool -->
+                <div id="content-image" class="d-none fade-in h-100">
+                    <div class="row g-4 h-100">
+                        <div class="col-md-6 d-flex flex-column gap-4">
+                            <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+                                <div id="uploadPlaceholder" class="text-center">
+                                    <i class="ph ph-upload-simple text-secondary mb-3" style="font-size: 48px;"></i>
+                                    <p class="fw-medium text-body-emphasis mb-1">Sube una imagen médica</p>
+                                    <p class="small text-secondary">Radiografías, fotos clínicas, etc.</p>
+                                </div>
+                                <img id="previewImage" class="d-none rounded img-fluid"
+                                    style="max-height: 300px; object-fit: contain;">
+                                <input type="file" id="fileInput" class="d-none" accept="image/*"
+                                    onchange="handleImageUpload(this)">
+                            </div>
+
+                            <div class="d-flex gap-2">
+                                <input type="text" id="promptInput" class="form-control"
+                                    placeholder="Ej: Resalta la inflamación en la articulación...">
+                                <button class="btn btn-primary d-flex align-items-center justify-content-center"
+                                    onclick="generateImage()" style="width: 50px;">
+                                    <i class="ph ph-paper-plane-right"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div
+                                class="result-box h-100 d-flex flex-column align-items-center justify-content-center p-3 text-center min-h-300">
+                                <div id="generatedPlaceholder">
+                                    <i class="ph ph-magic-wand text-secondary opacity-50 mb-3"
+                                        style="font-size: 48px;"></i>
+                                    <p class="text-secondary">La imagen generada aparecerá aquí</p>
+                                </div>
+                                <div id="generatedLoader" class="d-none">
+                                    <div class="spinner-border text-primary" role="status"></div>
+                                    <p class="mt-2 text-secondary small">Procesando imagen con Nano Banana...</p>
+                                </div>
+                                <div id="generatedResult" class="d-none w-100">
+                                    <p class="small fw-bold text-secondary text-uppercase mb-2">Resultado Generado</p>
+                                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVPcjBf51b3wqXXVhKa-MzIOYxYYz_T4R5r09svpBh2dTVH1f18rxFVhvehGH5KNwkzREICfmyAqJzY3qghhDpNXtyydDv7CBu6iuYUrewE51Hw1dRzN1BdM5XKoBvrIkKPJS_UWki6JujD9ovwfvrI1fdU3NetrCgFguG586fABKrAQ-o5vdpQdr06MK1MeRkrW02FRC4Lf9D98PHb57YYENYHsKj15JowNXl2Yqj0uu2ogbV8ajO-f0-IxVbXcTooTER-J5MffAb"
+                                        class="img-fluid rounded shadow-sm border border-light-subtle mb-3"
+                                        alt="Generated">
+                                    <a href="#" class="btn btn-link text-primary text-decoration-none">Descargar
+                                        Imagen</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        if (html.getAttribute('data-bs-theme') !== 'dark' && localStorage.getItem('theme') === 'dark') {
+            html.setAttribute('data-bs-theme', 'dark');
+            themeIcon.classList.replace('ph-moon', 'ph-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            if (newTheme === 'dark') {
+                themeIcon.classList.replace('ph-moon', 'ph-sun');
+            } else {
+                themeIcon.classList.replace('ph-sun', 'ph-moon');
+            }
+        });
+
+        // Tabs Logic
+        function switchTab(tabId) {
+            document.querySelectorAll('.nav-link-custom').forEach(el => el.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+
+            if (tabId === 'search') {
+                document.getElementById('content-search').classList.remove('d-none');
+                document.getElementById('content-image').classList.add('d-none');
+            } else {
+                document.getElementById('content-search').classList.add('d-none');
+                document.getElementById('content-image').classList.remove('d-none');
+            }
+        }
+
+        // Search Mock
+        document.getElementById('searchForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const query = document.getElementById('searchInput').value;
+            if (!query) return;
+
+            // Loading state
+            document.getElementById('searchResult').classList.add('d-none');
+            document.getElementById('searchLoader').classList.remove('d-none');
+
+            setTimeout(() => {
+                document.getElementById('searchLoader').classList.add('d-none');
+                document.getElementById('searchResult').classList.remove('d-none');
+
+                // Mock Response
+                document.getElementById('resultText').innerHTML = `
+                    <p>Los tratamientos biológicos más recientes para la Artritis Reumatoide (AR) incluyen inhibidores de JAK (Janus Kinase) como upadacitinib y filgotinib, que han demostrado alta eficacia en pacientes con respuesta inadecuada a metotrexato.</p>
+                    <p>Además, se están investigando terapias dirigidas a macrófagos y nuevas vías de señalización de citoquinas para reducir la inmunogenicidad a largo plazo.</p>
+                `;
+
+                // Mock Sources
+                const sourcesHTML = `
+                    <div class="col-md-6">
+                        <a href="#" class="d-block p-3 rounded border text-decoration-none">
+                            <div class="fw-bold text-primary text-truncate">ACR Guidelines 2023</div>
+                            <div class="small text-secondary text-truncate">rheumatology.org/guidelines</div>
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="d-block p-3 rounded border text-decoration-none">
+                            <div class="fw-bold text-primary text-truncate">EULAR Research Papers</div>
+                            <div class="small text-secondary text-truncate">eular.org/research</div>
+                        </a>
+                    </div>
+                `;
+                document.getElementById('sourcesList').innerHTML = sourcesHTML;
+
+            }, 1500);
+        });
+
+        // Image Tool Logic
+        function handleImageUpload(input) {
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('uploadPlaceholder').classList.add('d-none');
+                    const img = document.getElementById('previewImage');
+                    img.src = e.target.result;
+                    img.classList.remove('d-none');
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function generateImage() {
+            const prompt = document.getElementById('promptInput').value;
+            // Ideally check if image is uploaded too
+            if (!prompt) return;
+
+            document.getElementById('generatedPlaceholder').classList.add('d-none');
+            document.getElementById('generatedResult').classList.add('d-none');
+            document.getElementById('generatedLoader').classList.remove('d-none');
+
+            setTimeout(() => {
+                document.getElementById('generatedLoader').classList.add('d-none');
+                document.getElementById('generatedResult').classList.remove('d-none');
+            }, 2000);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum - SUMAJ MAKI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: #0f172a;
+        }
+
+        /* Navbar reuse styles */
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e2e8f0;
+            height: 80px;
+        }
+
+        [data-bs-theme="dark"] .navbar {
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+
+        /* Sidebar Styles */
+        .course-sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid #e2e8f0;
+            height: calc(100vh - 80px);
+            /* Subtract navbar height */
+            position: sticky;
+            top: 80px;
+            overflow-y: auto;
+        }
+
+        [data-bs-theme="dark"] .course-sidebar {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .nav-link-custom {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            color: #64748b;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .nav-link-custom:hover,
+        .nav-link-custom.active {
+            background-color: #f1f5f9;
+            color: var(--primary-color);
+        }
+
+        [data-bs-theme="dark"] .nav-link-custom:hover,
+        [data-bs-theme="dark"] .nav-link-custom.active {
+            background-color: #334155;
+            color: #7dd3fc;
+        }
+
+        /* Module Card Styles */
+        .module-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        [data-bs-theme="dark"] .module-card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .module-card.locked {
+            opacity: 0.9;
+        }
+
+        .module-card.active-ring {
+            border-color: rgba(14, 165, 233, 0.2);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.1);
+        }
+
+        .lesson-item {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .lesson-item:hover {
+            background-color: #f8fafc;
+        }
+
+        [data-bs-theme="dark"] .lesson-item:hover {
+            background-color: #334155;
+        }
+
+        /* Scrollbar styles for sidebar */
+        .course-sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .course-sidebar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .course-sidebar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Navbar (Same as index) -->
+    <nav class="navbar navbar-expand-lg sticky-top z-3">
+        <div class="container-fluid px-4 px-lg-5">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                <img src="images/logo.png" alt="Logo" height="70">
+                <div class="d-flex flex-column">
+                    <span class="fw-bold lh-1 text-dark dark:text-light" style="font-size: 1.25rem;">SUMAJ MAKI</span>
+                    <span class="text-secondary fw-bold" style="font-size: 0.65rem;">FUNDACIÓN MULTIDISCIPLINARIA</span>
+                </div>
+            </a>
+
+            <button class="navbar-toggler ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#sidebarMenu">
+                <i class="ph ph-list"></i>
+            </button>
+
+            <div class="d-none d-lg-flex align-items-center gap-3 ms-auto">
+                <a href="courses.html"
+                    class="btn btn-link text-decoration-none text-primary d-flex align-items-center gap-2 bg-primary-subtle rounded-3 p-2">
+                    <i class="ph ph-book-open" style="font-size: 1.5rem;"></i>
+                    <span>Tabla de Contenidos</span>
+                </a>
+                <a href="ai-tools.html"
+                    class="btn btn-link text-decoration-none text-secondary d-flex align-items-center gap-2">
+                    <i class="ph ph-sparkle" style="font-size: 1.5rem;"></i>
+                    <span>Herramientas IA</span>
+                </a>
+                <button class="btn btn-light rounded-circle p-2" id="themeToggle">
+                    <i class="ph ph-moon" id="themeIcon" style="font-size: 1.5rem;"></i>
+                </button>
+                <div class="rounded-circle bg-secondary-subtle d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px;">
+                    <i class="ph ph-user text-secondary"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="d-flex flex-grow-1 overflow-hidden">
+
+        <!-- Sidebar (Desktop & Mobile Offcanvas wrapper) -->
+        <div class="offcanvas-lg offcanvas-start course-sidebar border-end-0 border-r-lg" tabindex="-1"
+            id="sidebarMenu">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title">Menú</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body d-flex flex-column p-4">
+                <h6 class="text-uppercase text-secondary small fw-bold mb-4" style="letter-spacing: 0.05em;">Navegación
+                    del Curso</h6>
+
+                <div class="bg-primary-subtle rounded-3 p-3 mb-4 border border-primary-subtle">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                        <span class="small fw-bold text-primary">Progreso Total</span>
+                        <span class="small fw-bold text-primary" id="totalProgressText">0%</span>
+                    </div>
+                    <div class="progress" style="height: 8px;">
+                        <div class="progress-bar bg-primary" id="totalProgressBar" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <nav class="nav flex-column gap-1 mb-auto" id="sidebarModulesList">
+                    <!-- Dynamic Module Links will go here -->
+                </nav>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <main class="flex-grow-1 p-4 p-lg-5 overflow-auto bg-body-tertiary">
+            <div class="container-md" style="max-width: 900px;">
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-5">
+                    <div>
+                        <h2 class="h2 fw-bold mb-2">Tabla de Contenidos</h2>
+                        <p class="text-secondary mb-0" id="courseSubtitle">Cargando...</p>
+                    </div>
+                    <div class="d-flex gap-2">
+                        <button class="btn btn-outline-danger d-flex align-items-center gap-2" id="resetBtn">
+                            <i class="ph ph-arrow-counter-clockwise"></i> Reiniciar Curso
+                        </button>
+                        <a href="#" id="continueBtn" class="btn btn-primary d-flex align-items-center gap-2">
+                            Continuar Curso <i class="ph ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex flex-column gap-4" id="modulesContainer">
+                    <div class="text-center py-5">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        if (html.getAttribute('data-bs-theme') !== 'dark' && localStorage.getItem('theme') === 'dark') {
+            html.setAttribute('data-bs-theme', 'dark');
+            themeIcon.classList.replace('ph-moon', 'ph-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+
+            if (newTheme === 'dark') {
+                themeIcon.classList.replace('ph-moon', 'ph-sun');
+            } else {
+                themeIcon.classList.replace('ph-sun', 'ph-moon');
+            }
+        });
+
+        // Dynamic Content Logic
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('../docs/curso.json');
+                const data = await response.json();
+
+                document.getElementById('courseSubtitle').textContent = data.course.title;
+
+                // --- Progress Logic ---
+                // Load progress from LocalStorage (array of completed module IDs)
+                const savedProgress = JSON.parse(localStorage.getItem('courseProgress') || '[]');
+
+                // Calculate percentage
+                const totalModules = data.modules.length;
+                const completedCount = savedProgress.length;
+                const percent = Math.round((completedCount / totalModules) * 100);
+
+                // Update Sidebar
+                document.getElementById('totalProgressText').textContent = `${percent}%`;
+                document.getElementById('totalProgressBar').style.width = `${percent}%`;
+
+                // Determine first active module (first one not completed)
+                // If all completed, just point to the last one or stay
+                let nextModuleId = data.modules[0].id;
+                for (let m of data.modules) {
+                    if (!savedProgress.includes(m.id)) {
+                        nextModuleId = m.id;
+                        break;
+                    }
+                }
+                document.getElementById('continueBtn').href = `lesson.html?module=${nextModuleId}`;
+
+                // Populate Sidebar Navigation
+                const sidebarList = document.getElementById('sidebarModulesList');
+                sidebarList.innerHTML = '';
+
+                data.modules.forEach(mod => {
+                    const isCompleted = savedProgress.includes(mod.id);
+                    const isCurrent = mod.id === nextModuleId;
+
+                    let iconClass = 'ph-circle';
+                    if (isCompleted) iconClass = 'ph-check-circle text-success';
+                    if (isCurrent) iconClass = 'ph-circle text-primary';
+
+                    const link = document.createElement('a');
+                    link.href = `lesson.html?module=${mod.id}`;
+                    link.className = `nav-link-custom ${isCurrent ? 'active' : ''}`;
+                    link.innerHTML = `
+                        <i class="ph ${iconClass} fs-5 flex-shrink-0"></i>
+                        <span class="text-wrap lh-sm">${mod.title}</span>
+                    `;
+                    sidebarList.appendChild(link);
+                });
+
+                // Reset Button Logic
+                document.getElementById('resetBtn').addEventListener('click', () => {
+                    if (confirm('¿Estás seguro de que deseas reiniciar todo el progreso del curso?')) {
+                        localStorage.removeItem('courseProgress');
+                        window.location.reload();
+                    }
+                });
+
+
+                const container = document.getElementById('modulesContainer');
+                container.innerHTML = ''; // basic reset
+
+                data.modules.forEach((mod, index) => {
+                    const isCompleted = savedProgress.includes(mod.id);
+
+                    // Logic for "Current": It is the first one that is NOT completed.
+                    // But we also need to check if previous ones are completed to "Unlock" it.
+                    // Actually, simpler: 
+                    // - If completed -> Completed
+                    // - If NOT completed but previous IS completed (or it's index 0) -> Active/In Progress
+                    // - Else -> Locked
+
+                    const prevCompleted = index === 0 || savedProgress.includes(data.modules[index - 1].id);
+                    const isCurrent = !isCompleted && prevCompleted;
+                    const isLocked = !isCompleted && !prevCompleted;
+
+
+                    // Create Module Card
+                    const card = document.createElement('div');
+                    card.className = `module-card ${isCurrent ? 'active-ring' : ''} ${isLocked ? 'locked' : ''}`;
+
+                    // Header
+                    let iconHTML = '';
+                    let badgeHTML = '';
+
+                    if (isCompleted) {
+                        iconHTML = `<div class="rounded-circle bg-success-subtle text-success d-flex align-items-center justify-content-center flex-shrink-0" style="width: 48px; height: 48px;"><i class="ph ph-check-circle" style="font-size: 24px;"></i></div>`;
+                        badgeHTML = `<span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3">Completado</span>`;
+                    } else if (isCurrent) {
+                        iconHTML = `<div class="rounded-circle bg-primary-subtle text-primary d-flex align-items-center justify-content-center flex-shrink-0 fw-bold fs-5" style="width: 48px; height: 48px;">${index + 1}</div>`;
+                        badgeHTML = `<span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3">En Progreso</span>`;
+                    } else {
+                        iconHTML = `<div class="rounded-circle bg-secondary-subtle text-secondary d-flex align-items-center justify-content-center flex-shrink-0 fw-bold fs-5" style="width: 48px; height: 48px;">${index + 1}</div>`;
+                        badgeHTML = `<span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill px-3">No Iniciado</span>`;
+                    }
+
+                    let lessonsHTML = '';
+                    if (!isLocked) {
+                        lessonsHTML = `<div class="border-top border-light-subtle ${isCompleted ? 'bg-light-subtle' : ''}">
+                            <ul class="list-unstyled p-4 ps-md-5 ms-md-4 mb-0 d-flex flex-column gap-2 text-secondary small">`;
+
+                        mod.topics.forEach((topic, i) => {
+                            // Make the "current" interesting lesson clickable
+                            const isPlayable = isCurrent && i === 0;
+
+                            if (isPlayable) {
+                                lessonsHTML += `
+                                <a href="lesson.html?module=${mod.id}" class="text-decoration-none lesson-item p-2 rounded d-flex justify-content-between align-items-center bg-primary-subtle border-start border-4 border-primary">
+                                    <div class="d-flex align-items-center gap-2 text-dark dark:text-light fw-medium">
+                                        <i class="ph ph-play-circle text-primary"></i> ${index + 1}.${i + 1} ${topic}
+                                    </div>
+                                    <span class="badge text-bg-primary">Actual</span>
+                                </a>`;
+                            } else {
+                                lessonsHTML += `
+                                <li class="lesson-item p-2 rounded d-flex align-items-center gap-2">
+                                    <i class="ph ${isCompleted ? 'ph-check-circle text-success' : 'ph-circle'}"></i> 
+                                    ${index + 1}.${i + 1} ${topic}
+                                </li>`;
+                            }
+                        });
+                        lessonsHTML += `</ul></div>`;
+                    }
+
+                    card.innerHTML = `
+                         <div class="p-4 d-flex flex-column flex-md-row gap-4 align-items-start align-items-md-center">
+                            ${iconHTML}
+                            <div class="flex-grow-1">
+                                <h3 class="h5 fw-bold mb-1">${mod.title}</h3>
+                                <div class="d-flex gap-3 text-secondary small">
+                                    <span class="d-flex align-items-center gap-1"><i class="ph ph-clock"></i> ${mod.estimatedHours}h</span>
+                                    <span class="d-flex align-items-center gap-1"><i class="ph ph-list-dashes"></i> ${mod.topics.length} Temas</span>
+                                </div>
+                            </div>
+                            ${badgeHTML}
+                        </div>
+                        ${lessonsHTML}
+                    `;
+
+                    container.appendChild(card);
+                });
+
+            } catch (e) {
+                console.error(e);
+                document.getElementById('modulesContainer').innerHTML = `<div class="alert alert-danger">Error al cargar el contenido del curso.</div>`;
+            }
+        });
+    </script>
+</body>
+
+</html>

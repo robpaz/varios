@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - SUMAJ MAKI</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+            --secondary-color: #0c4a6e;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: #0f172a;
+        }
+
+        .text-primary-custom {
+            color: var(--primary-color);
+        }
+
+        .bg-primary-custom {
+            background-color: var(--primary-color);
+        }
+
+        .navbar {
+            height: 80px;
+            background-color: white;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        [data-bs-theme="dark"] .navbar {
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+
+        .hero-card {
+            background-color: white;
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        [data-bs-theme="dark"] .hero-card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .progress-card {
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        [data-bs-theme="dark"] .progress-card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .quick-access-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+
+        [data-bs-theme="dark"] .quick-access-card {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+
+        .quick-access-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        [data-bs-theme="dark"] footer {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-xl">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                <img src="images/logo.png" alt="Logo" height="70">
+                <div class="d-flex flex-column">
+                    <span class="fw-bold lh-1 text-dark dark:text-light" style="font-size: 1.25rem;">SUMAJ MAKI</span>
+                    <span class="text-secondary fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">FUNDACIÓN
+                        MULTIDISCIPLINARIA</span>
+                </div>
+            </a>
+
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                <span class="d-none d-md-block text-secondary fw-medium">Capacitación Médica Continua</span>
+
+                <a href="courses.html"
+                    class="btn btn-link text-decoration-none text-secondary d-flex align-items-center gap-2">
+                    <i class="ph ph-book-open" style="font-size: 1.5rem;"></i>
+                    <span class="d-none d-sm-inline">Tabla de Contenidos</span>
+                </a>
+
+                <a href="ai-tools.html"
+                    class="btn btn-link text-decoration-none text-secondary d-flex align-items-center gap-2">
+                    <i class="ph ph-sparkle" style="font-size: 1.5rem;"></i>
+                    <span class="d-none d-sm-inline">Herramientas IA</span>
+                </a>
+
+                <button class="btn btn-light rounded-circle p-2" id="themeToggle">
+                    <i class="ph ph-moon" id="themeIcon" style="font-size: 1.5rem;"></i>
+                </button>
+
+                <div class="rounded-circle bg-secondary-subtle d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px;">
+                    <i class="ph ph-user text-secondary" style="font-size: 1.25rem;"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container-xl py-5">
+        <div class="row g-4 mb-5">
+            <!-- Hero Section -->
+            <div class="col-lg-8">
+                <div class="hero-card p-4 p-md-5 h-100">
+                    <div class="d-inline-flex px-3 py-1 rounded-pill bg-primary-subtle text-primary fw-bold text-uppercase mb-4"
+                        style="font-size: 0.75rem;">
+                        Curso Activo
+                    </div>
+                    <h1 class="display-6 fw-bold mb-3 text-body-emphasis">
+                        Bienvenido al curso de <span class="text-primary-custom" id="courseTitle">...</span>
+                    </h1>
+                    <p class="lead text-secondary mb-5" id="courseDescription">
+                        Cargando información del curso...
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="lesson.html"
+                            class="btn btn-primary btn-lg d-flex align-items-center gap-2 px-4 shadow-sm"
+                            id="continueBtn">
+                            <span>Continuar Lección</span>
+                            <i class="ph ph-play-circle" style="font-size: 1.25rem;"></i>
+                        </a>
+                        <a href="courses.html" class="btn btn-outline-secondary btn-lg">
+                            Ver Detalles
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress Section -->
+            <div class="col-lg-4">
+                <div class="progress-card p-4 h-100 d-flex flex-column justify-content-center">
+                    <h3 class="h5 fw-bold mb-4 d-flex align-items-center text-body-emphasis">
+                        <i class="ph ph-chart-bar text-primary me-2" style="font-size: 1.5rem;"></i>
+                        Tu Progreso
+                    </h3>
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="text-secondary small fw-medium">Completado</span>
+                        <span class="text-primary fw-bold" id="dashboardProgressText">0%</span>
+                    </div>
+                    <div class="progress mb-4" style="height: 12px;">
+                        <div class="progress-bar bg-primary-custom" role="progressbar" style="width: 0%"
+                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" id="dashboardProgressBar"></div>
+                    </div>
+
+                    <ul class="list-unstyled d-flex flex-column gap-3 mb-0" id="recentModulesList">
+                        <!-- Dynamic content will go here -->
+                        <li class="text-center text-secondary small">Cargando progreso...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="h4 fw-bold mb-4 px-1 text-body-emphasis">Accesos Rápidos</h2>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- Cards -->
+            <div class="col">
+                <a href="#" class="quick-access-card d-block p-4 text-decoration-none">
+                    <div class="icon-box bg-primary-subtle text-primary mb-3">
+                        <i class="ph ph-books"></i>
+                    </div>
+                    <h3 class="h6 fw-bold text-body-emphasis mb-1">Material de Lectura</h3>
+                    <p class="small text-secondary mb-0">Guías clínicas y papers actualizados.</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="quick-access-card d-block p-4 text-decoration-none">
+                    <div class="icon-box bg-success-subtle text-success mb-3">
+                        <i class="ph ph-video-camera"></i>
+                    </div>
+                    <h3 class="h6 fw-bold text-body-emphasis mb-1">Videoteca</h3>
+                    <p class="small text-secondary mb-0">Casos clínicos y procedimientos.</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="quick-access-card d-block p-4 text-decoration-none">
+                    <div class="icon-box bg-warning-subtle text-warning mb-3">
+                        <i class="ph ph-question"></i>
+                    </div>
+                    <h3 class="h6 fw-bold text-body-emphasis mb-1">Evaluaciones</h3>
+                    <p class="small text-secondary mb-0">Tests y certificaciones pendientes.</p>
+                </a>
+            </div>
+            <div class="col">
+                <a href="#" class="quick-access-card d-block p-4 text-decoration-none">
+                    <div class="icon-box bg-danger-subtle text-danger mb-3">
+                        <i class="ph ph-chat-circle"></i>
+                    </div>
+                    <h3 class="h6 fw-bold text-body-emphasis mb-1">Foro Médico</h3>
+                    <p class="small text-secondary mb-0">Discusión de casos con colegas.</p>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('../docs/curso.json');
+                const data = await response.json();
+
+                // Update Course Info
+                document.getElementById('courseTitle').textContent = data.course.title;
+                // Use a summarized description logic or first objective
+                document.getElementById('courseDescription').textContent = data.course.description || data.course.learningObjectives[0];
+
+                // --- Update Progress Logic ---
+                const savedProgress = JSON.parse(localStorage.getItem('courseProgress') || '[]');
+                const totalModules = data.modules.length;
+                const completedCount = savedProgress.length;
+                const percent = Math.round((completedCount / totalModules) * 100);
+
+                // Update Progress Bar
+                const progressBar = document.getElementById('dashboardProgressBar');
+                progressBar.style.width = `${percent}%`;
+                progressBar.setAttribute('aria-valuenow', percent);
+                document.getElementById('dashboardProgressText').textContent = `${percent}%`;
+
+
+                const modulesList = document.getElementById('recentModulesList');
+                modulesList.innerHTML = '';
+
+                // Determine first active module (for "Continuar Curso")
+                let nextModuleId = data.modules[0].id;
+                for (let m of data.modules) {
+                    if (!savedProgress.includes(m.id)) {
+                        nextModuleId = m.id;
+                        break;
+                    }
+                }
+                document.getElementById('continueBtn').href = `lesson.html?module=${nextModuleId}`;
+
+
+                // Show first 3 modules as "recent" for the dashboard
+                data.modules.slice(0, 3).forEach((mod, index) => {
+                    const isCompleted = savedProgress.includes(mod.id);
+                    // "Current" is the one that matches nextModuleId
+                    // Or if all completed, none is current? Or last one?
+                    // Simplified: if not completed and it is the nextModuleId
+                    const isCurrent = (mod.id === nextModuleId) && !isCompleted;
+
+                    const isLocked = !isCompleted && !isCurrent;
+
+                    let iconClass = 'ph-lock';
+                    let bgClass = 'bg-secondary-subtle text-secondary';
+                    let statusText = 'Bloqueado';
+                    let textClass = 'text-secondary';
+
+                    if (isCompleted) {
+                        iconClass = 'ph-check';
+                        bgClass = 'bg-success-subtle text-success';
+                        statusText = 'Completado';
+                        textClass = 'text-body-emphasis';
+                    } else if (isCurrent) {
+                        iconClass = 'ph-clock';
+                        bgClass = 'bg-info-subtle text-primary';
+                        statusText = 'En curso';
+                        textClass = 'text-body-emphasis';
+                    }
+
+                    const li = document.createElement('li');
+                    li.className = `d-flex align-items-start ${isLocked ? 'opacity-50' : ''}`;
+                    li.innerHTML = `
+                         <div class="rounded-circle ${bgClass} d-flex align-items-center justify-content-center flex-shrink-0" style="width: 24px; height: 24px;">
+                            <i class="ph ${iconClass}" style="font-size: 14px;"></i>
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 small fw-medium ${textClass}">${mod.title}</p>
+                            <p class="mb-0 text-secondary" style="font-size: 0.75rem;">${statusText}</p>
+                        </div>
+                    `;
+                    modulesList.appendChild(li);
+                });
+
+                // Update Continue Button to point to first module or current
+                document.getElementById('continueBtn').href = `lesson.html?module=${data.modules[0].id}`;
+
+            } catch (error) {
+                console.error('Error loading course data:', error);
+                document.getElementById('courseTitle').textContent = 'Error cargando curso';
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container-xl">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="images/logo.png" alt="Logo Small" width="32" height="32" class="rounded-circle">
+                    <span class="fw-bold text-secondary">SUMAJ MAKI</span>
+                </div>
+                <div class="d-flex gap-4 small fw-medium text-secondary">
+                    <a href="#" class="text-decoration-none text-reset hover-primary">Soporte Técnico</a>
+                    <a href="#" class="text-decoration-none text-reset hover-primary">Contacto</a>
+                    <a href="#" class="text-decoration-none text-reset hover-primary">Políticas de Privacidad</a>
+                </div>
+                <div class="small text-secondary-subtle">
+                    © 2023 Fundación Sumaj Maki. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-bs-theme', newTheme);
+            themeIcon.classList.toggle('ph-moon');
+            themeIcon.classList.toggle('ph-sun');
+        });
+    </script>
+</body>
+
+</html>
