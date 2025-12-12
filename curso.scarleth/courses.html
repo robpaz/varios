@@ -255,7 +255,7 @@
         // Dynamic Content Logic
         document.addEventListener('DOMContentLoaded', async () => {
             try {
-                const response = await fetch('../docs/curso.json');
+                const response = await fetch('docs/curso.json');
                 const data = await response.json();
 
                 document.getElementById('courseSubtitle').textContent = data.course.title;
