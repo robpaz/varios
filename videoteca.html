@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videoteca - SUMAJ MAKI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary-color: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        [data-bs-theme="dark"] body {
+            background-color: #0f172a;
+        }
+
+        .navbar {
+            background-color: white;
+            border-bottom: 1px solid #e2e8f0;
+            height: 80px;
+        }
+
+        [data-bs-theme="dark"] .navbar {
+            background-color: #1e293b;
+            border-bottom: 1px solid #334155;
+        }
+
+        footer {
+            margin-top: auto;
+            background-color: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        [data-bs-theme="dark"] footer {
+            background-color: #1e293b;
+            border-color: #334155;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-xl">
+            <a class="navbar-brand d-flex align-items-center gap-3" href="index.html">
+                <img src="images/logo.png" alt="Logo" height="70">
+                <div class="d-flex flex-column">
+                    <span class="fw-bold lh-1 text-dark dark:text-light" style="font-size: 1.25rem;">SUMAJ MAKI</span>
+                    <span class="text-secondary fw-bold" style="font-size: 0.65rem; letter-spacing: 0.05em;">FUNDACIÓN
+                        MULTIDISCIPLINARIA</span>
+                </div>
+            </a>
+
+            <div class="d-flex align-items-center gap-3 ms-auto">
+                 <a href="courses.html"
+                    class="btn btn-link text-decoration-none text-secondary d-flex align-items-center gap-2">
+                    <i class="ph ph-book-open" style="font-size: 1.5rem;"></i>
+                    <span class="d-none d-sm-inline">Tabla de Contenidos</span>
+                </a>
+
+                <a href="ai-tools.html"
+                    class="btn btn-link text-decoration-none text-secondary d-flex align-items-center gap-2">
+                    <i class="ph ph-sparkle" style="font-size: 1.5rem;"></i>
+                    <span class="d-none d-sm-inline">Herramientas IA</span>
+                </a>
+
+                <button class="btn btn-light rounded-circle p-2" id="themeToggle">
+                    <i class="ph ph-moon" id="themeIcon" style="font-size: 1.5rem;"></i>
+                </button>
+
+                <div class="rounded-circle bg-secondary-subtle d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px;">
+                    <i class="ph ph-user text-secondary" style="font-size: 1.25rem;"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container-xl py-5">
+        <h1 class="display-6 fw-bold mb-3">Videoteca</h1>
+        <p class="lead text-secondary mb-5">El contenido de esta sección estará disponible próximamente.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container-xl">
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-4">
+                <div class="d-flex align-items-center gap-2">
+                    <img src="images/logo.png" alt="Logo Small" width="32" height="32" class="rounded-circle">
+                    <span class="fw-bold text-secondary">SUMAJ MAKI</span>
+                </div>
+                <div class="d-flex gap-4 small fw-medium text-secondary">
+                    <a href="#" class="text-decoration-none text-reset hover-primary">Soporte Técnico</a>
+                    <a href="#" class="text-decoration-none text-reset hover-primary">Contacto</a>
+                    <a href="#" class="text-decoration-none text-reset hover-primary">Políticas de Privacidad</a>
+                </div>
+                <div class="small text-secondary-subtle">
+                    © 2023 Fundación Sumaj Maki. Todos los derechos reservados.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        const html = document.documentElement;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+            html.setAttribute('data-bs-theme', newTheme);
+            themeIcon.classList.toggle('ph-moon');
+            themeIcon.classList.toggle('ph-sun');
+        });
+    </script>
+</body>
+
+</html>
