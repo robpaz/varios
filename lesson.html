@@ -186,6 +186,9 @@
                 <p class="fs-5 text-secondary" id="lessonSubtitle">...</p>
             </div>
 
+            <!-- Hero Image -->
+            <div class="hero-image" id="lessonImage"></div>
+
             <!-- Text Content -->
             <div class="prose text-body-strong" id="lessonContent">
                 <p>Cargando contenido del módulo...</p>
@@ -281,6 +284,9 @@
                 document.getElementById('moduleBreadcrumb').textContent = module.id;
                 document.getElementById('lessonTitle').textContent = module.title;
                 document.getElementById('lessonSubtitle').textContent = `Duración estimada: ${module.estimatedHours} horas`;
+                if (module.image) {
+                    document.getElementById('lessonImage').style.backgroundImage = `url(${module.image})`;
+                }
 
                 // Content (Topics)
                 let contentHTML = '<p>Temas a tratar en este módulo:</p><ul class="mb-4">';
