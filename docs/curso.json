@@ -74,6 +74,7 @@
         {
             "id": "M01",
             "title": "Inmunopatogénesis aplicada y endotipos clínicos",
+            "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 4,
             "outcomes": [
                 "Traducir mecanismos (TNF/IL-6/IL-17/IL-23, coestimulación, B-cells, JAK-STAT) a decisiones terapéuticas.",
@@ -97,6 +98,7 @@
         {
             "id": "M02",
             "title": "Diagnóstico temprano, clasificación y banderas rojas",
+            "image": "https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=2131&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 4,
             "outcomes": [
                 "Diferenciar artritis inflamatoria de diagnósticos alternativos críticos.",
@@ -118,6 +120,7 @@
         {
             "id": "M03",
             "title": "Medición de actividad, daño y PROMs (medicina medible)",
+            "image": "https://images.unsplash.com/photo-1581091014532-74786473a213?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 4,
             "outcomes": [
                 "Seleccionar y calcular índices de actividad y daño según patología.",
@@ -143,6 +146,7 @@
         {
             "id": "M04",
             "title": "Algoritmos farmacológicos en RA (avanzado y realista)",
+            "image": "https://images.unsplash.com/photo-1627938345131-412854930309?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 6,
             "outcomes": [
                 "Implementar T2T con tiempos y umbrales claros.",
@@ -186,6 +190,7 @@
         {
             "id": "M05",
             "title": "PsA y axSpA: integración reuma-derma-gastro-oftalmo",
+            "image": "https://images.unsplash.com/photo-1551601651-2a8555f1a13e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 5,
             "outcomes": [
                 "Elegir tratamiento por dominios (articular, piel, axial, entesitis, EMM).",
@@ -208,6 +213,7 @@
         {
             "id": "M06",
             "title": "Dolor en reumatología: de síntoma a diagnóstico transversal",
+            "image": "https://images.unsplash.com/photo-1618939304344-803923d38865?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 6,
             "outcomes": [
                 "Fenotipar dolor y detectar nociplasticidad/sensibilización central.",
@@ -236,6 +242,7 @@
         {
             "id": "M07",
             "title": "Rehabilitación y fisiatría basada en objetivos",
+            "image": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 4,
             "outcomes": [
                 "Prescribir ejercicio y terapia ocupacional con dosificación por brote/remisión.",
@@ -251,6 +258,7 @@
         {
             "id": "M08",
             "title": "Enfermería reumatológica y educación terapéutica (núcleo MDT)",
+            "image": "https://images.unsplash.com/photo-1606016159999-39f1c73c899c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 4,
             "outcomes": [
                 "Implementar educación terapéutica estructurada y seguimiento remoto.",
@@ -273,6 +281,7 @@
         {
             "id": "M09",
             "title": "Seguridad, infecciones, vacunas y prevención (medicina interna aplicada)",
+            "image": "https://images.unsplash.com/photo-1694503551352-7945d1f67f43?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 6,
             "outcomes": [
                 "Diseñar paquetes de seguridad antes y durante inmunosupresión.",
@@ -294,6 +303,7 @@
         {
             "id": "M10",
             "title": "Difficult-to-treat y refractariedad: marco clínico y operativo",
+            "image": "https://images.unsplash.com/photo-1666214278572-2a9f1e49d863?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 5,
             "outcomes": [
                 "Distinguir refractariedad biológica de falla por causas corregibles.",
@@ -313,6 +323,7 @@
         {
             "id": "M11",
             "title": "Compromiso sistémico y subespecialidades de órgano (modelo en red)",
+            "image": "https://images.unsplash.com/photo-1581091007423-a741d4c22759?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 6,
             "outcomes": [
                 "Reconocer y co-manejar compromiso de órgano con rutas MDT.",
@@ -329,6 +340,7 @@
         {
             "id": "M12",
             "title": "Metodología 2025+ y del futuro: clínica híbrida, digital y basada en valor",
+            "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "estimatedHours": 6,
             "outcomes": [
                 "Implementar clínica híbrida y monitoreo remoto con PROMS.",

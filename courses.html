@@ -400,6 +400,7 @@
                     }
 
                     card.innerHTML = `
+                        ${mod.image ? `<img src="${mod.image}" class="card-img-top" alt="Imagen del módulo ${mod.title}" style="height: 200px; object-fit: cover;">` : ''}
                          <div class="p-4 d-flex flex-column flex-md-row gap-4 align-items-start align-items-md-center">
                             ${iconHTML}
                             <div class="flex-grow-1">
