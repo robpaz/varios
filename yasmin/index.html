@@ -27,11 +27,12 @@
             <h3
                 style="text-align: center; font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin: 0; color: var(--gold-color);">
                 Ubicación</h3>
-            <p style="text-align: center; margin: 5px 0 10px 0; font-size: 1.1rem;">Tadeo Haenke 1229, Edificio Buen
-                Vivir 3</p>
+            <p style="text-align: center; margin: 5px 0 10px 0; font-size: 1.1rem;">Tadeo Haenke 1229
+                <br>Edificio Buen Vivir 3
+            </p>
             <div class="map-container" style="margin-bottom: -5px;">
                 <iframe
-                    src="https://maps.google.com/maps?q=Tadeo+Haenke+1229+Cochabamba&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    src="https://maps.google.com/maps?q=Edificio+Buen+Vivir+III+Cochabamba&t=&z=15&ie=UTF8&iwloc=&output=embed"
                     width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </section>
@@ -43,7 +44,7 @@
             // Note: Clicks inside the iframe won't even reach here because of cross-origin, 
             // so this listener naturally applies to "everything else".
             if (e.target.tagName !== 'IFRAME' && !e.target.closest('a')) {
-                window.open('https://www.google.com/maps/search/?api=1&query=Tadeo+Haenke+1229+Cochabamba', '_blank');
+                window.open('https://maps.app.goo.gl/VwToPTjJxjDJbevZ9', '_blank');
             }
         });
         // Change cursor to pointer to indicate clickable
